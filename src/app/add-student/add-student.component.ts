@@ -4,8 +4,7 @@ import {FormControl,FormGroup,Validators} from '@angular/forms';
 import { Student } from '../student';  
 @Component({  
   selector: 'app-add-student',  
-  templateUrl: './add-student.component.html',  
-  styleUrls: ['./add-student.component.css']  
+  templateUrl: './add-student.component.html' 
 })  
 export class AddStudentComponent implements OnInit {  
   
