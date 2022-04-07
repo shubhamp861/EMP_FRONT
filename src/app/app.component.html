@@ -1,4 +1,4 @@
-<div  class="container-fluid">  
+<div  class="container-fluid" *ngIf="!datainit; else spin">
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">  
       <ul class="navbar-nav">  
         <li class="nav-item ">  
@@ -8,6 +8,11 @@
           <a  routerLink="add-student" class="nav-link" class="btn btn-primary active" role="button" >Add Student</a>  
         </li>            
       </ul>  
-    </nav>     
+    </nav>
+
       <router-outlet></router-outlet>  
-  </div>  
+  </div>
+<ng-template #spin>
+  <div class="spinner-border" role="status"></div>
+  <span style="margin-left: 20px">Waiting for server to startup and fetching data.....</span>
+</ng-template>
