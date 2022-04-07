@@ -4,11 +4,13 @@ import { Student } from './student';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+
 })
 export class AppComponent {
   title = 'emp';
   student=null;
+  datainit = false;
   constructor(private studentService$:StudentService){
     this.studentService$.getStudentList().subscribe(x=>{
       console.log(x)
@@ -22,6 +24,7 @@ export class AppComponent {
           this.student.student_branch="DA";  
           this.studentService$.createStudent( this.student).subscribe(x=>console.log(x));
         }
+        this.datainit = true;
         this.studentService$.getStudentList().subscribe(x=>console.log(x));
       }
     
